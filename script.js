@@ -14,4 +14,11 @@ function knightShortestPath(start, end) {
     //Initialize BFS with a queue, and way to track visited vertices
     let queue = [];
     let visited = Array.from({length: 8}, ()=> Array(8).fill(false));
+
+    //----------------------------------------------------------------------
+
+    //BFS BEGINS:
+    queue.push([start[0], start[1], 0]) //[x, y, moves];
 }
+
+knightShortestPath([3, 3], [4, 3]);
