@@ -51,4 +51,7 @@ function knightShortestPath(start, end) {
     return -1;
 }
 
-knightShortestPath([3, 3], [4, 3]);
+
+//DRIVING CODE:
+const result = knightShortestPath([3, 3], [4, 3]);
+console.log(result);
