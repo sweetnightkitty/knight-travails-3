@@ -37,6 +37,14 @@ function knightShortestPath(start, end) {
         for(let [moveX, moveY] of knightMoves) {
             let newX = currentX + moveX;
             let newY = currentY + moveY;
+
+            //If the new position is within bounds and hasn't been visited
+            if(isInBounds(newX, newY) && !visited[newX][newY]) {
+                //mark it visited
+                visited[newX][newY] = true;
+                //Add to queue and increase moves by 1 to reperesent a new level
+                queue.push([newX, newY, currentMoves + 1]);
+            }
         }
     }
 }
