@@ -18,7 +18,10 @@ function knightShortestPath(start, end) {
     //----------------------------------------------------------------------
 
     //BFS BEGINS:
+
+    //Add the start vertex to queue and mark it as visited
     queue.push([start[0], start[1], 0]) //[x, y, moves];
+    visited[start[0], start[1]] = true;
 }
 
 knightShortestPath([3, 3], [4, 3]);
