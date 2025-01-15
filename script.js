@@ -47,6 +47,8 @@ function knightShortestPath(start, end) {
             }
         }
     }
+    //If no path is found
+    return -1;
 }
 
 knightShortestPath([3, 3], [4, 3]);
