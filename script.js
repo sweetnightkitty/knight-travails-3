@@ -22,6 +22,17 @@ function knightShortestPath(start, end) {
     //Add the start vertex to queue and mark it as visited
     queue.push([start[0], start[1], 0]) //[x, y, moves];
     visited[start[0], start[1]] = true;
+
+    //BFS CONINTUES:
+    while (queue.length > 0) {
+        //Assign 3 variables with the x, y, moves of the first vertex in the queue respectively
+        let [currentX, currentY, currentMoves] = queue.shift();
+        
+        //If we reached the target-end then return the # of moves in that path
+        if(currentX === end[0] && currentY === end[1]) {
+            return currentMoves;
+        }
+    }
 }
 
 knightShortestPath([3, 3], [4, 3]);
