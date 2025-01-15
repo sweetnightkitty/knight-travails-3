@@ -10,4 +10,8 @@ function knightShortestPath(start, end) {
     function isInBounds(x, y) {
         return x >= 0 && x < 8 && y >=0 && y < 8;
     }
+
+    //Initialize BFS with a queue, and way to track visited vertices
+    let queue = [];
+    let visited = Array.from({length: 8}, ()=> Array(8).fill(false));
 }
