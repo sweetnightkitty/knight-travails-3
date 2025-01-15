@@ -5,4 +5,9 @@ function knightShortestPath(start, end) {
     const knightMoves = [
         [2, 1], [2, -1], [-2, 1], [-2, -1], [1, 2], [1, -2], [-1, 2], [-1, -2]
     ];
+
+    //Checks if the position is within bounds of the 8x8 board
+    function isInBounds(x, y) {
+        return x >= 0 && x < 8 && y >=0 && y < 8;
+    }
 }
