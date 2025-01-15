@@ -32,6 +32,12 @@ function knightShortestPath(start, end) {
         if(currentX === end[0] && currentY === end[1]) {
             return currentMoves;
         }
+
+        //Calculate all possible moves from the currentX/Y location
+        for(let [moveX, moveY] of knightMoves) {
+            let newX = currentX + moveX;
+            let newY = currentY + moveY;
+        }
     }
 }
 
