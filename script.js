@@ -19,18 +19,40 @@ function knightShortestPath(start, end) {
 
     //BFS BEGINS:
 
-    //Add the start vertex to queue and mark it as visited
-    queue.push([start[0], start[1], 0]) //[x, y, moves];
+    //Add the start vertex to queue; has no predecessor so null
+    queue.push(
+        {
+        position: start,
+        moves: 0,
+        predecessor: null
+        }
+    );
+
+    //Mark the starting vertex as visited
     visited[start[0], start[1]] = true;
+
 
     //BFS CONINTUES:
     while (queue.length > 0) {
         //Assign 3 variables with the x, y, moves of the first vertex in the queue respectively
-        let [currentX, currentY, currentMoves] = queue.shift();
+        let current = queue.shift();
+        let [currentX, currentY] = current.position
+        let moves = current.moves;
+        let predecessor = current.predecessor;
         
-        //If we reached the target-end then return the # of moves in that path
+        //If we reached the target-end then generate a list of moves along that path
         if(currentX === end[0] && currentY === end[1]) {
-            return currentMoves;
+            let path = [];
+            let currentNode = current;
+
+            //Reconstruct the path from the end backwards to get in order list of moves
+            while(currentNode) {
+                path.unshift(currentNode.position);
+                currentNode = currentNode.predecessor;
+            }
+
+            //Returns the number of moves and the total path
+            return {moves, path};
         }
 
         //Calculate all possible moves from the currentX/Y location
@@ -43,7 +65,14 @@ function knightShortestPath(start, end) {
                 //mark it visited
                 visited[newX][newY] = true;
                 //Add to queue and increase moves by 1 to reperesent a new level
-                queue.push([newX, newY, currentMoves + 1]);
+                //Add the current vertex to predecessor forming a linked list of the path
+                queue.push(
+                    {
+                        position: [newX, newY],
+                        moves: moves + 1,
+                        predecessor: current
+                    }
+                )
             }
         }
     }
