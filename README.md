@@ -6,6 +6,7 @@ This project is a practice project that was built in accordance with the ODIN Pr
 
 - Graph data structures
 - Breadth first search
+- Conventional Commits in Git
 
 ## Check out the Assignment guidelines for this project:
 
