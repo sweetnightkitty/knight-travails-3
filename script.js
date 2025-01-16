@@ -80,7 +80,14 @@ function knightShortestPath(start, end) {
     return -1;
 }
 
+function displayResults(result) {
+    console.log(`You made it in ${result.moves} moves! Here's your path:`);
+    for(path of result.path) {
+        console.log(`[${path}]`);
+    }
+}
+
 
 //DRIVING CODE:
 const result = knightShortestPath([3, 3], [4, 3]);
-console.log(result);
+displayResults(result);
