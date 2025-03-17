@@ -33,4 +33,6 @@ https://www.theodinproject.com/lessons/javascript-knights-travails
 
 ## Installation
 
-You will just need to fork a copy of this repository and then clone it to your local environment using the git clone command. Code is then ready to go.
+You will just need to fork a copy of this repository and then clone it to your local environment using the git clone command. 
+
+Once your local environment is ready, simply load in browser and view the console for the project results.
